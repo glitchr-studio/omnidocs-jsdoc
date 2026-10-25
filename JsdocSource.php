@@ -128,7 +128,8 @@ final class JsdocSource implements SourceInterface
             if ($name === $global) {
                 continue;
             }
-            $id = Headings::id(str_replace(['#', '.'], '-', $name), $taken);
+            // Its id without its global's name: the page is the global's ("attach" on StickyStops' page).
+            $id = Headings::id(str_replace(['#', '.'], '-', str_starts_with($name, $global.'.') ? substr($name, \strlen($global) + 1) : $name), $taken);
             $signature = self::signature($doclet, $name);
             $kind = (string) ($doclet['kind'] ?? 'member');
             $html .= '<h2 id="'.$id.'"><code>'.Conventions::escape($signature).'</code> <span class="api-kind">'.Conventions::escape(self::kindOf($doclet)).'</span></h2>';

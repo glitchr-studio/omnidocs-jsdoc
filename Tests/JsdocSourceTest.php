@@ -50,7 +50,7 @@ final class JsdocSourceTest extends TestCase
         $links = new RecordingLinker();
         $html = (string) $this->source()->page('stickystops', $links)?->html();
 
-        self::assertMatchesRegularExpression('#<h2 id="stickystops-attach"><code>StickyStops\.attach\([^)]*\)</code> <span class="api-kind">function</span></h2>#', $html);
+        self::assertMatchesRegularExpression('#<h2 id="attach"><code>StickyStops\.attach\([^)]*\)</code> <span class="api-kind">function</span></h2>#', $html);
         self::assertStringContainsString('The stops of a scroller (the window by default); made if needed.', $html);
         self::assertStringContainsString('href="repo:src/js/stops.js#L', $html, 'its line, in the repository');
         $attach = null;
