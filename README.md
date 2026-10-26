@@ -25,6 +25,29 @@ $api = (new Omnidocs\Jsdoc\JsdocSourceFactory())->create(['file' => 'var/jsdoc.j
 | `root` | `""` | where the sources were when JSDoc read them: each file named as the repository names it |
 | `title` | `API reference` | the reference's title |
 | `order` | `[]` | the globals first, in this order |
+| `groups` | `[]` | a group's title => its globals (`{"Navigation": ["Transparent", "FlowFrame"]}`): the index's cards by group, and the tree by group (a section per group, so that a one-page reading groups them in its table of contents) |
+| `links` | `[]` | a global => its links on the index card, label => address (`{"StickyStops": {"Manual": "/docs/#stops", "Demo": "/#stops"}}`) |
+
+## The index
+
+The reference's home lists the globals, by group when `groups` names them, each a card
+(`li.api-card`): its name, linked to its page; what it is in a sentence - its own comment's first one,
+else the `@file` comment of the file it is written in (`/** @file StickyScenes, scenes the scroll
+plays. */`); what it holds, counted (`.api-card-counts`: "18 options · 45 methods · 2 events · 2
+properties" - the keys of its `defaults` or `settings` object, its functions, the `@event`s documented
+on it, its other properties); the links `links` gives it. `JsdocSource::counts($global)` and
+`describe($global)` give the same to a site's own template.
+
+An event is documented where it is dispatched, on its global - its name may hold colons:
+
+```js
+/**
+ * Told on the scene (it bubbles) at each frame its progress changes.
+ * @event StickyScenes#scene:progress
+ */
+```
+
+It has its entry on the global's page (`#event-scene-progress`), as an event.
 
 ## Why JSDoc, not TypeDoc
 
