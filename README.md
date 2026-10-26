@@ -1,7 +1,7 @@
 # omnidocs/jsdoc
 
 A JavaScript library's API reference from what JSDoc explains of its sources (`jsdoc -X src > api.json`:
-every doclet, commented or not), as an [omnidocs](https://github.com/glitchr-studio/omnidocs) manual:
+every doclet, commented or not), as an [omnidocs](https://github.com/glitchr-omnisense/omnidocs) manual:
 a page per global, its functions, methods and properties in the order of the source - a commented one
 with its text and parameters, an uncommented function with its signature - each at its anchor, each
 linked to its line.

@@ -3,12 +3,12 @@
     "type": "library",
     "description": "Omnidocs JSDoc: a JavaScript library's API reference from the JSON JSDoc explains (jsdoc -X) - a page per global, its functions, methods and properties with their comments, parameters and source lines; a library of browser scripts (IIFE, UMD) named by the globals it sets.",
     "keywords": ["documentation", "api reference", "javascript", "jsdoc", "omnidocs"],
-    "homepage": "https://github.com/glitchr-studio/omnidocs-jsdoc",
+    "homepage": "https://github.com/glitchr-omnisense/omnidocs-jsdoc",
     "license": "MIT",
     "authors": [{"name": "Marco Meyer", "email": "marco.meyer@glitchr.io"}],
     "require": {
         "php": ">=8.2",
-        "omniscient/omnidocs": "^1.0@dev"
+        "omnisense/omnidocs": "^1.0@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.0"
